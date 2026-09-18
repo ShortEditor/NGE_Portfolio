@@ -1,0 +1,32 @@
+{
+  "background-desktop": {
+    "width": 1672,
+    "height": 941,
+    "bytes": 318108
+  },
+  "background-mobile": {
+    "width": 1000,
+    "height": 563,
+    "bytes": 121162
+  },
+  "hill-desktop": {
+    "width": 1672,
+    "height": 632,
+    "bytes": 424880
+  },
+  "hill-mobile": {
+    "width": 900,
+    "height": 340,
+    "bytes": 125000
+  },
+  "subject-desktop": {
+    "width": 1023,
+    "height": 897,
+    "bytes": 163456
+  },
+  "subject-mobile": {
+    "width": 900,
+    "height": 789,
+    "bytes": 127410
+  }
+}
