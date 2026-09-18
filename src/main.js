@@ -3,7 +3,7 @@ import { clamp, sampleTimeline } from './timeline.js';
 const $ = selector => document.querySelector(selector);
 const stage = $('#stage'), journey = $('.journey'), scene = $('.scene');
 const opening = $('#opening-copy'), identity = $('#identity'), meet = $('#meet-link');
-const fill = $('#timeline-fill'), counter = $('#progress-number'), cue = $('#scroll-cue');
+const fill = $('#timeline-fill'), cue = $('#scroll-cue');
 const toggle = $('#motion-toggle'), loader = $('#loading');
 const layerElements = [$('#layer-bg'), $('#layer-hill'), $('#layer-subject')];
 const systemMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -61,7 +61,6 @@ function render() {
   identity.setAttribute('aria-hidden', String(!show));
   meet.tabIndex = show ? 0 : -1;
   fill.style.transform = `scaleX(${state.p})`;
-  counter.textContent = String(Math.round(state.p * 100)).padStart(2, '0');
   cue.style.opacity = String(reduced ? 1 : Math.max(.3, 1 - state.p));
   stage.dataset.progress = state.p.toFixed(3);
 }

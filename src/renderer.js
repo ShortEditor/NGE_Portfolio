@@ -7,7 +7,10 @@ uniform sampler2D uBackground,uHill,uSubject;
 uniform vec2 uSize,uCenter;
 uniform vec4 uBgRect,uHillRect,uSubjectRect;
 uniform float uBurst,uProgress,uQuality;
+
 float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float hash2(vec2 p){return fract(sin(dot(p,vec2(269.5,183.3)))*43758.5453);}
+
 vec4 layer(sampler2D tex,vec2 uv,vec4 rect){
  vec2 p=(uv*uSize-rect.xy)/rect.zw;
  if(p.x<0.||p.y<0.||p.x>1.||p.y>1.)return vec4(0.);
@@ -21,6 +24,43 @@ vec3 compose(vec2 uv){
  color=mix(color,hill.rgb,hill.a);
  return mix(color,subject.rgb,subject.a);
 }
+
+// Apply mosaic cell warping — pixelated fragments that travel outward
+vec2 mosaicWarp(vec2 uv, vec2 direction, float radius, float effect, float progress){
+ float cellSize=mix(2.,8.,effect);
+ vec2 grid=floor(uv*uSize/cellSize);
+ float seed=hash(grid);
+ float envelope=1.-smoothstep(.08,1.0,radius);
+ float fragmentTravel=pow(seed,4.)*effect*.085*envelope;
+ float waveRadius=mix(.02,1.15,clamp((progress-.35)/.36,0.,1.));
+ float wave=exp(-pow((radius-waveRadius)/.105,2.))*effect*.033;
+ vec2 warped=uv-direction*(fragmentTravel+wave);
+ vec2 pixelated=(floor(warped*uSize/cellSize)+.5)*cellSize/uSize;
+ warped=mix(warped,pixelated,effect*.62*envelope);
+ return warped;
+}
+
+// Particles — bright sparkles that drift outward from the focal center
+float particles(vec2 uv, vec2 center, float effect, float progress){
+ float sparkle=0.;
+ for(float i=0.;i<80.;i++){
+   vec2 seed=vec2(i*13.72,i*7.31);
+   vec2 pos=vec2(hash(seed),hash2(seed));
+   vec2 drift=(pos-center)*effect*(.3+hash(seed+1.)*.5)*progress;
+   pos+=drift;
+   pos=fract(pos);
+   float d=length((uv-pos)*vec2(uSize.x/uSize.y,1.));
+   float size=(.0008+hash(seed+3.)*.0018)*effect;
+   float brightness=smoothstep(size,size*.2,d);
+   float flicker=.5+.5*sin(i*4.37+progress*6.28);
+   brightness*=flicker*effect;
+   float dist=length((pos-center)*vec2(uSize.x/uSize.y,1.));
+   brightness*=smoothstep(1.2,.05,dist);
+   sparkle+=brightness*(.6+hash(seed+5.)*.4);
+ }
+ return sparkle;
+}
+
 void main(){
  vec2 uv=vUv;
  vec2 aspect=vec2(uSize.x/uSize.y,1.);
@@ -28,28 +68,55 @@ void main(){
  float radius=length(radial);
  vec2 direction=normalize(radial+vec2(.00001))/aspect;
  float effect=uBurst;
- vec2 warped=uv;
+
+ vec3 color=vec3(0.);
  if(effect>.001){
-   // Fixed image-space cells stretch along the view's depth vector. No random playback.
-   float cellSize=mix(2.,8.,effect);
-   vec2 grid=floor(uv*uSize/cellSize);
-   float seed=hash(grid);
-   float envelope=1.-smoothstep(.08,1.0,radius);
-   float fragmentTravel=pow(seed,4.)*effect*.085*envelope;
-   float waveRadius=mix(.02,1.15,clamp((uProgress-.35)/.36,0.,1.));
-   float wave=exp(-pow((radius-waveRadius)/.105,2.))*effect*.033;
-   warped-=direction*(fragmentTravel+wave);
-   vec2 pixelated=(floor(warped*uSize/cellSize)+.5)*cellSize/uSize;
-   warped=mix(warped,pixelated,effect*.62*envelope);
+   // Step 1: Mosaic warp — pixelated cells that fragment outward
+   vec2 warped=mosaicWarp(uv,direction,radius,effect,uProgress);
+
+   // Step 2: Radial motion blur on top of the mosaic — multi-tap along radial direction
+   float blurStrength=effect*.028;
+   float envelope=1.-smoothstep(.05,.95,radius);
+   float strength=blurStrength*envelope;
+
+   if(uQuality>.5){
+     // 8-tap radial blur over the mosaic-warped coordinates
+     const int SAMPLES=8;
+     float totalWeight=0.;
+     for(int i=0;i<SAMPLES;i++){
+       float t=float(i)/float(SAMPLES-1)-.5;
+       float weight=1.-abs(t)*1.4;
+       weight=max(weight,.1);
+       vec2 offset=direction*t*strength*2.;
+       // Each tap gets its own mosaic warp for streaked mosaic fragments
+       vec2 tapUv=mosaicWarp(uv+offset,direction,radius,effect,uProgress);
+       color+=compose(tapUv)*weight;
+       totalWeight+=weight;
+     }
+     color/=totalWeight;
+   } else {
+     // Low quality: simple 3-tap radial streak over mosaic
+     vec2 streak=direction*strength;
+     color=compose(warped)*.54+compose(mosaicWarp(uv+streak,direction,radius,effect,uProgress))*.23
+           +compose(mosaicWarp(uv-streak,direction,radius,effect,uProgress))*.23;
+   }
+
+   // Chromatic aberration — radial channel split
+   float caStrength=effect*.0025;
+   color.r=mix(color.r,compose(mosaicWarp(uv+direction*caStrength,direction,radius,effect,uProgress)).r,effect*.45);
+   color.b=mix(color.b,compose(mosaicWarp(uv-direction*caStrength,direction,radius,effect,uProgress)).b,effect*.45);
+ } else {
+   color=compose(uv);
  }
- vec3 color=compose(warped);
- if(effect>.001&&uQuality>.5){
-   vec2 streak=direction*effect*.009;
-   color=color*.54+compose(warped+streak)*.23+compose(warped-streak)*.23;
-   // A restrained channel separation, removed entirely at both bookends.
-   color.r=mix(color.r,compose(warped+direction*effect*.0025).r,effect*.45);
-   color.b=mix(color.b,compose(warped-direction*effect*.0025).b,effect*.45);
+
+ // Particle overlay
+ if(effect>.01){
+   float p=particles(uv,uCenter,effect,uProgress);
+   vec3 particleColor=vec3(1.,.92,.78);
+   color+=particleColor*p*.7;
  }
+
+ // Film grain
  float grain=(hash(floor(vUv*uSize))-.5)*.012*effect;
  gl_FragColor=vec4(color+grain,1.);
 }`;
