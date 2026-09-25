@@ -60,20 +60,6 @@ if ('IntersectionObserver' in window) {
   root.querySelectorAll('.nge-section').forEach(el => sectionObserver.observe(el));
 }
 
-const copy = root.querySelector('#nge-copy-name');
-const status = root.querySelector('.nge-copy-status');
-if (navigator.clipboard?.writeText) {
-  copy.hidden = false;
-  copy.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText('Gangisetty Naga Ganesh Eswar');
-      status.textContent = 'Name copied. Search for it on LinkedIn.';
-    } catch {
-      status.textContent = 'Copy unavailable. Select the name above to search on LinkedIn.';
-    }
-  }, options);
-}
-
 function dispose() {
   abort.abort(); revealObserver?.disconnect(); sectionObserver?.disconnect();
   root.querySelectorAll('.nge-awaiting').forEach(el => el.classList.remove('nge-awaiting'));
