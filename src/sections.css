@@ -23,62 +23,122 @@
 /* Palzy: a conversation typing indicator appears after the title. */
 #project-palzy h3::after{content:'';display:inline-block;width:5px;height:5px;margin-left:14px;border-radius:50%;background:currentColor;box-shadow:11px 0 0 currentColor,22px 0 0 currentColor;opacity:0;transition:opacity .25s}
 #project-palzy:hover h3::after,#project-palzy:focus-within h3::after{opacity:.75;animation:nge-typing 1s .1s infinite}
+#project-palzy:active h3::after{opacity:.75;animation:nge-typing 1s .1s infinite}
 /* Neon Coast: the specimen type picks up a neon glow. */
 #project-neon-coast .nge-project-specimen>span{transition:transform .45s cubic-bezier(.2,.7,.2,1),text-shadow .35s}
 #project-neon-coast:hover .nge-project-specimen>span,#project-neon-coast:focus-within .nge-project-specimen>span{text-shadow:0 0 22px rgba(239,186,130,.6),0 0 60px rgba(239,186,130,.25)}
+#project-neon-coast:active .nge-project-specimen>span{text-shadow:0 0 22px rgba(239,186,130,.6),0 0 60px rgba(239,186,130,.25)}
 /* Smart Attendance: a warm tick marks the title present. */
 #project-attendance h3::after{content:'✓';color:var(--warm);margin-left:12px;font-size:.7em;opacity:0;transform:translateX(-8px);display:inline-block;transition:opacity .25s,transform .25s}
 #project-attendance:hover h3::after,#project-attendance:focus-within h3::after{opacity:1;transform:none}
+#project-attendance:active h3::after{opacity:1;transform:none}
 /* Chapp: the title switches to a cipher-like monospace on hover. */
 #project-chapp h3{transition:letter-spacing .3s}
 #project-chapp:hover h3,#project-chapp:focus-within h3{font-family:monospace;letter-spacing:-.06em}
+#project-chapp:active h3{font-family:monospace;letter-spacing:-.06em}
 /* GRIB: an underline draws itself beneath the title, like a thought connecting. */
 #project-grib h3{position:relative;display:inline-block}
 #project-grib h3::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:currentColor;transition:width .45s cubic-bezier(.2,.7,.2,1)}
 #project-grib:hover h3::after,#project-grib:focus-within h3::after{width:100%}
+#project-grib:active h3::after{width:100%}
 /* IP-SAKTI: calm kinetic - the border warms slowly. */
 #project-ip-sakti{transition:border-color .9s ease}
 #project-ip-sakti:hover,#project-ip-sakti:focus-within{border-color:var(--warm)}
 /* APIT: a deterministic PASS stamp lands in the meta row. */
 #project-apit .nge-project-meta::after{content:'✓ PASS';font:9px/1 monospace;letter-spacing:.08em;border:1px solid var(--warm);color:var(--warm);padding:6px 8px;transform:scale(1.25) rotate(-8deg);opacity:0;transition:transform .18s cubic-bezier(.2,.7,.2,1),opacity .18s}
 #project-apit:hover .nge-project-meta::after,#project-apit:focus-within .nge-project-meta::after{transform:rotate(-4deg);opacity:1}
+#project-apit:active .nge-project-meta::after{transform:rotate(-4deg);opacity:1}
 /* Drift: a music note bobs after the title, like a 30-second preview playing. */
 #project-drift h3::after{content:'♪';margin-left:12px;font-size:.65em;color:var(--warm);opacity:0;display:inline-block;transition:opacity .25s}
 #project-drift:hover h3::after,#project-drift:focus-within h3::after{opacity:1;animation:nge-bob .9s ease-in-out infinite}
+#project-drift:active h3::after{opacity:1;animation:nge-bob .9s ease-in-out infinite}
 /* Mana Katha: ruled ledger lines fade in behind the description. */
 #project-mana-katha .nge-project-description{position:relative}
 #project-mana-katha .nge-project-description::after{content:'';position:absolute;inset:-6px -10px;background:repeating-linear-gradient(transparent 0 26px,rgba(172,176,170,.34) 26px 27px);opacity:0;transition:opacity .45s;pointer-events:none}
 #project-mana-katha:hover .nge-project-description::after,#project-mana-katha:focus-within .nge-project-description::after{opacity:1}
+#project-mana-katha:active .nge-project-description::after{opacity:1}
 /* GaneshOS: a terminal caret blinks after the title. */
 #project-ganeshos h3::after{content:'_';font-family:monospace;margin-left:6px;opacity:0;transition:opacity .2s}
 #project-ganeshos:hover h3::after,#project-ganeshos:focus-within h3::after{opacity:1;animation:nge-blink 1.1s steps(1) infinite}
+#project-ganeshos:active h3::after{opacity:1;animation:nge-blink 1.1s steps(1) infinite}
 /* Exam Hall Watch: on hover one letter is the anomaly. Markup span added at build time. */
 .nge-ano{display:inline-block;transition:transform .5s,color .5s}
 #project-exam-hall-watch:hover .nge-ano,#project-exam-hall-watch:focus-within .nge-ano{color:var(--warm);transform:translateY(-3px) rotate(8deg)}
+#project-exam-hall-watch:active .nge-ano{color:var(--warm);transform:translateY(-3px) rotate(8deg)}
 /* Neural Network Playground: a left edge draws on in four stepped layers. */
 #project-nn-playground::before{content:'';position:absolute;left:0;top:26px;bottom:26px;width:2px;background:var(--warm);transform:scaleY(0);transform-origin:top;transition:transform .55s steps(4)}
 #project-nn-playground:hover::before,#project-nn-playground:focus-within::before{transform:scaleY(1)}
+#project-nn-playground:active::before{transform:scaleY(1)}
 /* AI Resume Builder: the card lifts like a page off the stack. */
 #project-resume-builder{transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .25s}
 #project-resume-builder:hover,#project-resume-builder:focus-within{transform:translateY(-4px)}
 /* TinyLLM: the model size appears beside the title. */
 #project-tinyllm h3::after{content:'0.5B';font:10px/1 monospace;letter-spacing:.05em;margin-left:12px;vertical-align:middle;opacity:0;transform:translateY(4px);display:inline-block;transition:opacity .3s,transform .3s}
 #project-tinyllm:hover h3::after,#project-tinyllm:focus-within h3::after{opacity:.8;transform:none}
+#project-tinyllm:active h3::after{opacity:.8;transform:none}
 /* Swara Keyboard: the title becomes a keycap that presses down. */
 #project-swara-keyboard h3{display:inline-block;border-bottom:2px solid transparent;padding-bottom:3px;transition:border-color .2s,transform .12s}
 #project-swara-keyboard:hover h3,#project-swara-keyboard:focus-within h3{border-color:currentColor;transform:translateY(1px)}
+#project-swara-keyboard:active h3{border-color:currentColor;transform:translateY(1px)}
 /* RelayClip: the link arrow is copied, like the clipboard across devices. */
 #project-relayclip .nge-project-meta>span:last-child{transition:text-shadow .25s}
 #project-relayclip:hover .nge-project-meta>span:last-child,#project-relayclip:focus-within .nge-project-meta>span:last-child{text-shadow:6px -6px 0 rgba(172,176,170,.45)}
+#project-relayclip:active .nge-project-meta>span:last-child{text-shadow:6px -6px 0 rgba(172,176,170,.45)}
 /* Cloud Notes API: the endpoint answers 200 OK in the meta line. */
 #project-cloud-notes-api .nge-project-meta>span:first-child::after{content:' · 200 OK';opacity:0;transition:opacity .3s}
 #project-cloud-notes-api:hover .nge-project-meta>span:first-child::after,#project-cloud-notes-api:focus-within .nge-project-meta>span:first-child::after{opacity:.85}
+#project-cloud-notes-api:active .nge-project-meta>span:first-child::after{opacity:.85}
 /* Reduced motion: no looping animations; static end states only. */
 .is-reduced #project-palzy:hover h3::after,.is-reduced #project-palzy:focus-within h3::after{animation:none}
 .is-reduced #project-drift:hover h3::after,.is-reduced #project-drift:focus-within h3::after{animation:none}
 .is-reduced #project-ganeshos:hover h3::after,.is-reduced #project-ganeshos:focus-within h3::after{animation:none}
 @media(prefers-reduced-motion:reduce){#project-palzy h3::after,#project-drift h3::after,#project-ganeshos h3::after{animation:none!important}}
 
+/* Section signature interactions (hover + keyboard focus + touch tap) */
+/* The person: education stats warm up once the drawer is open */
+.nge-education dd{position:relative;display:inline-block}
+.nge-education dd::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--warm);transition:width .6s cubic-bezier(.2,.7,.2,1) .15s}
+.nge-education[open] dd::after{width:100%}
+.nge-education[open] dd{animation:nge-stat-in .5s cubic-bezier(.2,.7,.2,1) both}
+.nge-education[open] dl>div:nth-child(2) dd{animation-delay:.12s}
+@keyframes nge-stat-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* The work: filters press like real buttons */
+.nge-filters button:active{transform:translateY(2px)}
+.nge-project:active{transition-duration:0s}
+
+/* The tools: skill rows - index warms, row leans in, hairline draws */
+.nge-skill-list>div{position:relative;transition:padding-left .35s cubic-bezier(.2,.7,.2,1)}
+.nge-skill-list>div::before{content:'';position:absolute;left:0;top:0;width:0;height:1px;background:var(--warm);transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.nge-skill-list>div:hover,.nge-skill-list>div:focus-within,.nge-skill-list>div:active{padding-left:14px}
+.nge-skill-list>div:hover::before,.nge-skill-list>div:focus-within::before,.nge-skill-list>div:active::before{width:100%}
+.nge-skill-list h3 small{transition:color .3s}
+.nge-skill-list>div:hover h3 small,.nge-skill-list>div:focus-within h3 small,.nge-skill-list>div:active h3 small{color:var(--warm)}
+
+/* The other side: film rows get a play mark, music rows get an equalizer */
+.nge-catalog-group:first-child li{position:relative}
+.nge-catalog-group:first-child li::after{content:'▶';font-size:8px;color:var(--warm);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s;align-self:center}
+.nge-catalog-group:first-child li:hover::after,.nge-catalog-group:first-child li:focus-within::after,.nge-catalog-group:first-child li:active::after{opacity:1;transform:none}
+.nge-catalog-group:first-child li{grid-template-columns:20px 1fr auto 14px}
+.nge-catalog-group:nth-child(2) li{position:relative;grid-template-columns:20px 1fr auto 18px}
+.nge-catalog-group:nth-child(2) li::after{content:'';width:12px;height:10px;align-self:center;background:linear-gradient(90deg,var(--warm) 2px,transparent 2px,transparent 5px,var(--warm) 5px,var(--warm) 7px,transparent 7px,transparent 10px,var(--warm) 10px);background-size:12px 100%;background-repeat:no-repeat;opacity:0;transition:opacity .3s}
+.nge-catalog-group:nth-child(2) li:hover::after,.nge-catalog-group:nth-child(2) li:focus-within::after,.nge-catalog-group:nth-child(2) li:active::after{opacity:.9;animation:nge-eq .8s ease-in-out infinite alternate}
+@keyframes nge-eq{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+.nge-catalog-group:nth-child(2) li:hover>span:first-of-type,.nge-catalog-group:nth-child(2) li:focus-within>span:first-of-type,.nge-catalog-group:nth-child(2) li:active>span:first-of-type{color:#6b4f2e}
+
+/* Say hello: arrows lift toward the link */
+.nge-socials>a span:last-child,.nge-footer a{transition:transform .3s cubic-bezier(.2,.7,.2,1);display:inline-block}
+.nge-socials>a:hover span:last-child,.nge-socials>a:focus-visible span:last-child,.nge-socials>a:active span:last-child{transform:translate(3px,-3px)}
+.nge-footer a:hover,.nge-footer a:focus-visible,.nge-footer a:active{transform:translateY(-3px)}
+
+/* Reduced motion: every animation above goes quiet */
+.is-reduced .nge-education[open] dd{animation:none}
+.is-reduced .nge-education[open] dd::after,.is-reduced .nge-skill-list>div::before{transition:none}
+.is-reduced .nge-skill-list>div:hover,.is-reduced .nge-skill-list>div:focus-within,.is-reduced .nge-skill-list>div:active{padding-left:0}
+.is-reduced .nge-catalog-group:nth-child(2) li::after{animation:none}
+.is-reduced .nge-filters button:active{transform:none}
+.is-reduced .nge-socials>a:hover span:last-child,.is-reduced .nge-socials>a:focus-visible span:last-child,.is-reduced .nge-socials>a:active span:last-child,.is-reduced .nge-footer a:hover,.is-reduced .nge-footer a:focus-visible,.is-reduced .nge-footer a:active{transform:none}
+@media(prefers-reduced-motion:reduce){.nge-education[open] dd{animation:none}.nge-catalog-group:nth-child(2) li::after{animation:none}}
 /* Ask AI assistant */
 .nge-ask-intro{max-width:46ch;color:var(--muted);margin:18px 0 34px}
 .nge-chat{border:1px solid var(--hairline);background:var(--coal);color:var(--paper);max-width:760px}
