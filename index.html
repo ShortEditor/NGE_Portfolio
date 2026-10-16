@@ -62,7 +62,7 @@
     <div class="nge-below">
       <nav class="nge-nav" aria-label="Portfolio chapters">
         <a class="nge-nav-brand" href="#top" aria-label="Return to the scene">nge.</a>
-        <div class="nge-nav-links"><a href="#builder">The person</a><a href="#work">The work</a><a href="#skills">The tools</a><a href="#creative">The other side</a><a href="#contact">Say hello ↗</a></div>
+        <div class="nge-nav-links"><a href="#builder">The person</a><a href="#work">The work</a><a href="#skills">The tools</a><a href="#creative">The other side</a><a href="#ask-ai">Ask AI</a><a href="#contact">Say hello ↗</a></div>
       </nav>
       <section class="nge-about nge-section" id="builder" aria-labelledby="nge-about-title">
         <div class="nge-kicker"><span>01 / A LITTLE CLOSER</span><span>ANDHRA PRADESH, INDIA</span></div>
@@ -124,10 +124,24 @@
         </div>
       </section>
 
-      <section id="ask-ai" hidden><!-- Reserved: future Groq-powered RAG assistant. Add a secure server endpoint before enabling the corresponding navigation item. Never put an API key in client code. --></section>
+      <section class="nge-ask nge-section" id="ask-ai" aria-labelledby="nge-ask-title">
+        <div class="nge-kicker"><span>05 / ASK AI</span><span>ANSWERS FROM MY OWN WORK</span></div>
+        <h2 id="nge-ask-title" data-reveal>Curious about<br><em>something I built?</em></h2>
+        <p class="nge-ask-intro">This assistant only knows my public work: projects, skills, studies, films and music. If it doesn’t know, it says so.</p>
+        <div class="nge-chat" data-reveal>
+          <div class="nge-chat-log" id="nge-chat-log" aria-live="polite">
+            <p class="nge-chat-msg nge-chat-bot">Ask me anything about Ganesh’s work. Try “What is Palzy?” or “What can he code in?”</p>
+          </div>
+          <form class="nge-chat-form" id="nge-chat-form">
+            <label class="sr-only" for="nge-chat-input">Ask the assistant a question</label>
+            <input id="nge-chat-input" name="question" type="text" maxlength="500" autocomplete="off" placeholder="Ask about a project, skill or film…" required />
+            <button class="nge-chat-send" type="submit">Ask <span aria-hidden="true">↗</span></button>
+          </form>
+        </div>
+      </section>
 
       <section class="nge-contact nge-section" id="contact" aria-labelledby="nge-contact-title">
-        <div class="nge-kicker"><span>05 / THE NEXT THING</span><span>STARTS WITH A CONVERSATION</span></div>
+        <div class="nge-kicker"><span>06 / THE NEXT THING</span><span>STARTS WITH A CONVERSATION</span></div>
         <h2 id="nge-contact-title" data-reveal>Have an idea?<br><em>Let’s make it real.</em></h2>
         <div class="nge-contact-bottom"><p>Software, a world, a film, a sound.<br>I’m interested in what you’re making.</p><div class="nge-socials"><a href="https://www.instagram.com/short_editor/" target="_blank" rel="noopener noreferrer">Instagram <span>@short_editor ↗</span></a><a href="https://github.com/ShortEditor" target="_blank" rel="noopener noreferrer">GitHub <span>ShortEditor ↗</span></a><a href="https://www.linkedin.com/in/gangisetty-naga-ganesh-eswar-26a20828b" target="_blank" rel="noopener noreferrer">LinkedIn <span>Ganesh ↗</span></a></div></div>
         <footer class="nge-footer"><span>NGE / 2026</span><span>MADE WITH INTENT. STILL EXPLORING.</span><a href="#top">Back to the view ↑</a></footer>
@@ -138,5 +152,6 @@
   <script type="module" src="/src/main.js"></script>
   <script type="module" src="/src/music-player.js"></script>
   <script type="module" src="/src/sections.js"></script>
+  <script type="module" src="/src/ask-ai.js"></script>
 </body>
 </html>
