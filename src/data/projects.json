@@ -160,7 +160,7 @@
   "subtitle": "With Ganesh Studio",
   "category": "software",
   "label": "Desktop OS / In development",
-  "description": "A personal desktop operating system: Debian underneath, a Mac-style desktop with custom window controls on top.",
+  "description": "A personal desktop operating system, built on Linux: Debian underneath, a Mac-style desktop with custom window controls on top.",
   "tech": [
    "Debian Linux",
    "Custom shell",
