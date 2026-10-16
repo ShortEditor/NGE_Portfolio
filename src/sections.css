@@ -80,17 +80,17 @@
 @media(prefers-reduced-motion:reduce){#project-palzy h3::after,#project-drift h3::after,#project-ganeshos h3::after{animation:none!important}}
 
 /* Ask AI assistant */
-.nge-ask-intro{max-width:46ch;color:var(--muted,#9aa0a6);margin:18px 0 34px}
-.nge-chat{border:1px solid var(--line,#2a323c);max-width:760px}
+.nge-ask-intro{max-width:46ch;color:var(--muted);margin:18px 0 34px}
+.nge-chat{border:1px solid var(--hairline);background:var(--coal);color:var(--paper);max-width:760px}
 .nge-chat-log{padding:26px;display:flex;flex-direction:column;gap:14px;max-height:380px;overflow-y:auto}
 .nge-chat-msg{margin:0;max-width:80%;line-height:1.55;font-size:15px;white-space:pre-wrap}
-.nge-chat-bot{align-self:flex-start;color:var(--ink,#e8e4dc)}
-.nge-chat-you{align-self:flex-end;text-align:right;color:var(--warm,#efba82)}
+.nge-chat-bot{align-self:flex-start;color:var(--paper)}
+.nge-chat-you{align-self:flex-end;text-align:right;color:var(--warm)}
 .nge-chat-thinking{opacity:.55}
-.nge-chat-form{display:flex;border-top:1px solid var(--line,#2a323c)}
-.nge-chat-form input{flex:1;background:transparent;border:0;color:var(--ink,#e8e4dc);font:inherit;font-size:15px;padding:18px 26px;outline:none}
-.nge-chat-form input::placeholder{color:var(--muted,#9aa0a6);opacity:.6}
-.nge-chat-send{background:transparent;border:0;border-left:1px solid var(--line,#2a323c);color:var(--warm,#efba82);font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:0 26px;cursor:pointer;transition:background .25s}
+.nge-chat-form{display:flex;border-top:1px solid #495155}
+.nge-chat-form input{flex:1;background:transparent;border:0;color:var(--paper);font:inherit;font-size:15px;padding:18px 26px;outline:none}
+.nge-chat-form input::placeholder{color:#8b9497}
+.nge-chat-send{background:transparent;border:0;border-left:1px solid #495155;color:var(--warm);font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:0 26px;cursor:pointer;transition:background .25s}
 .nge-chat-send:hover,.nge-chat-send:focus-visible{background:rgba(239,186,130,.08)}
 .nge-chat-send:disabled{opacity:.4;cursor:default}
 @media(max-width:700px){.nge-chat-msg{max-width:100%}.nge-chat-form input{padding:16px 18px}}
