@@ -1,3 +1,37 @@
+/* Headline line-reveal and quiet ambient motion for sparse hero space.
+   Transform/opacity only; everything stops under reduced motion. */
+@keyframes nge-line-up{from{transform:translateY(112%)}to{transform:translateY(0)}}
+.nge-hline{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em;margin-bottom:-.06em}
+.nge-hline-in{display:inline-block;will-change:transform;animation:nge-line-up .85s cubic-bezier(.2,.7,.2,1) both}
+.nge-hline:nth-of-type(2) .nge-hline-in{animation-delay:.14s}
+.nge-awaiting .nge-hline-in{animation:none;transform:translateY(112%)}
+@keyframes nge-dot-breathe{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.7}}
+.nge-note-dot{animation:nge-dot-breathe 3.4s ease-in-out 1.2s infinite}
+.nge-ambient{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.nge-ambient span{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--coal);opacity:.16;animation:nge-drift 26s ease-in-out infinite alternate}
+.nge-ambient span:nth-child(1){left:58%;top:16%;animation-duration:27s}
+.nge-ambient span:nth-child(2){left:74%;top:9%;width:5px;height:5px;background:var(--warm);opacity:.5;animation-duration:33s;animation-delay:-8s}
+.nge-ambient span:nth-child(3){left:86%;top:30%;animation-duration:24s;animation-delay:-14s}
+.nge-ambient span:nth-child(4){left:64%;top:38%;width:3px;height:3px;animation-duration:31s;animation-delay:-5s}
+.nge-ambient span:nth-child(5){left:91%;top:55%;width:3px;height:3px;background:var(--warm);opacity:.4;animation-duration:29s;animation-delay:-19s}
+.nge-ambient span:nth-child(6){left:47%;top:24%;animation-duration:35s;animation-delay:-11s}
+.nge-ambient span:nth-child(7){left:80%;top:44%;width:2px;height:2px;animation-duration:22s;animation-delay:-3s}
+@keyframes nge-drift{0%{transform:translate3d(0,0,0)}33%{transform:translate3d(14px,-20px,0)}66%{transform:translate3d(-10px,8px,0)}100%{transform:translate3d(6px,22px,0)}}
+.nge-about{position:relative}
+.is-reduced .nge-hline-in{animation:none;transform:none}
+.is-reduced .nge-note-dot,.is-reduced .nge-ambient span{animation:none}
+.is-reduced .nge-ambient{display:none}
+@media(prefers-reduced-motion:reduce){.nge-hline-in{animation:none;transform:none}.nge-note-dot,.nge-ambient span{animation:none}.nge-ambient{display:none}}
+@media(max-width:700px){.nge-ambient span:nth-child(n+4){display:none}}
+
+/* Headline letters answer hover/tap with a small lift. */
+.nge-h2-l{display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.nge-h2-l:hover,.nge-h2-l:active{transform:translateY(-5px)}
+.nge-hline{padding-top:.09em;margin-top:-.09em}
+.is-reduced .nge-h2-l{transition:none}
+.is-reduced .nge-h2-l:hover,.is-reduced .nge-h2-l:active{transform:none}
+@media(prefers-reduced-motion:reduce){.nge-h2-l{transition:none}.nge-h2-l:hover,.nge-h2-l:active{transform:none}}
+
 /* ===== About / Work / Contact — isolated from the approved hero ===== */
 .nge-below{--paper:#e8e8e2;--coal:#1c2428;--muted:#5c6568;--hairline:#acb0aa;--warm:#efba82;background:var(--paper);color:var(--coal);position:relative}
 .nge-below [hidden]{display:none!important}.nge-below h2,.nge-below h3,.nge-below p{margin-top:0}.nge-below p{line-height:1.65}.nge-below button,.nge-below summary,.nge-below a{touch-action:manipulation}.nge-below a:focus-visible,.nge-below button:focus-visible,.nge-below summary:focus-visible{outline:2px solid currentColor;outline-offset:5px}.nge-below summary{cursor:pointer;list-style:none}.nge-below summary::-webkit-details-marker{display:none}.nge-below summary::marker{content:''}.nge-below a,.nge-below summary{scroll-margin-top:100px}.nge-section{padding:45px 5.5vw 100px;scroll-margin-top:64px}.nge-nav{position:sticky;top:0;z-index:12;display:flex;gap:35px;align-items:center;min-height:76px;padding:12px 5.5vw;background:var(--paper);border-bottom:1px solid var(--hairline)}.nge-nav-brand{font-size:32px;font-weight:700;letter-spacing:-3px}.nge-nav-links{display:flex;align-items:center;gap:clamp(16px,2.5vw,40px);margin-left:auto}.nge-nav-links a{font-size:12px;padding:12px 0;border-bottom:1px solid transparent;white-space:nowrap}.nge-nav-links a:hover,.nge-nav-links a[aria-current]{border-color:currentColor}.nge-nav-soon{display:flex;align-items:center;gap:10px;font-size:11px;color:#60686b;border-left:1px solid var(--hairline);padding-left:25px;white-space:nowrap}.nge-nav-soon small{font-size:8px;border:1px solid var(--hairline);padding:4px}
@@ -154,3 +188,17 @@
 .nge-chat-send:hover,.nge-chat-send:focus-visible{background:rgba(239,186,130,.08)}
 .nge-chat-send:disabled{opacity:.4;cursor:default}
 @media(max-width:700px){.nge-chat-msg{max-width:100%}.nge-chat-form input{padding:16px 18px}}
+
+/* ---- Music: the track rows are the player. Tap a row to play or pause; the playing title's letters react to the beat; a thin underline fills as the track progresses and can be dragged to seek. ---- */
+.nge-catalog-group:nth-child(2) li.nge-track{cursor:pointer;position:relative}
+.nge-catalog-group:nth-child(2) li.nge-track.is-playing::after{opacity:.9;animation:nge-eq .8s ease-in-out infinite alternate}
+.nge-catalog-group:nth-child(2) li.nge-track.is-paused::after{opacity:.9;animation:nge-eq .8s ease-in-out infinite alternate;animation-play-state:paused}
+.nge-catalog-group:nth-child(2) li.nge-track.is-playing>span:first-of-type,.nge-catalog-group:nth-child(2) li.nge-track.is-paused>span:first-of-type{color:#6b4f2e}
+.nge-track-strip{position:absolute;left:0;right:0;bottom:-2px;height:14px;touch-action:none;cursor:pointer;z-index:2}
+.nge-track-progress{position:absolute;left:0;bottom:2px;height:2px;width:0;background:#6b4f2e;pointer-events:none}
+.nge-track.is-playing .nge-track-strip::before,.nge-track.is-paused .nge-track-strip::before{content:'';position:absolute;left:0;right:0;bottom:2px;height:2px;background:rgba(107,79,46,.22)}
+.nge-viz-l{display:inline-block;transform-origin:50% 100%;will-change:transform}
+.nge-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.is-reduced .nge-viz-l{transform:none!important}
+.is-reduced .nge-catalog-group:nth-child(2) li.nge-track.is-playing::after,.is-reduced .nge-catalog-group:nth-child(2) li.nge-track.is-paused::after{animation:none}
+@media(max-width:700px){.nge-track-strip{height:22px;bottom:-6px}}
