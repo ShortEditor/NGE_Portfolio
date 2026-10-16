@@ -139,23 +139,6 @@
   "linkLabel": "Open Drift"
  },
  {
-  "id": "smartbell",
-  "name": "SmartBell",
-  "subtitle": "GPT Dharmavaram",
-  "category": "software",
-  "label": "Hardware + web / In use at college",
-  "description": "An ESP32 college bell, scheduled and controlled from a live web dashboard.",
-  "tech": [
-   "ESP32",
-   "Firebase",
-   "Web dashboard",
-   "Realtime sync"
-  ],
-  "details": "Period editor, holiday calendar and live bell status, built for Government Polytechnic Dharmavaram. Documented in a full project review deck.",
-  "link": "https://smart-bell-b2fc0.web.app/",
-  "linkLabel": "Open the dashboard"
- },
- {
   "id": "mana-katha",
   "name": "Mana Katha",
   "subtitle": "For the family kirana shop",
@@ -177,7 +160,7 @@
   "subtitle": "With Ganesh Studio",
   "category": "software",
   "label": "Desktop OS / In development",
-  "description": "A personal desktop operating system: Debian underneath, a Mac-style desktop with custom window controls on top.",
+  "description": "A personal desktop operating system, built on Linux: Debian underneath, a Mac-style desktop with custom window controls on top.",
   "tech": [
    "Debian Linux",
    "Custom shell",
