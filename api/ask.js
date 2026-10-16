@@ -30,7 +30,7 @@ function retrieve(message, history) {
   const match = kw => {
     if (kw.includes(' ')) return text.includes(kw) ? 3 : 0;
     if (words.has(kw)) return 2;
-    if (kw.length >= 4) { for (const w of words) { if (w.length >= 4 && (w.startsWith(kw) || kw.startsWith(w))) return 1; } }
+    if (kw.length >= 4) { for (const w of words) { if (w.length >= 4 && (w.startsWith(kw) || kw.startsWith(w))) return 1; if (w.length >= 5 && kw.length >= 5 && w.slice(0,4) === kw.slice(0,4)) return 1; } }
     return 0;
   };
   const scored = KB.map(chunk => {
