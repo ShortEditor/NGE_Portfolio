@@ -8,7 +8,7 @@ const history = [];
 function addMessage(text, who) {
   const p = document.createElement('p');
   p.className = `nge-chat-msg ${who === 'you' ? 'nge-chat-you' : 'nge-chat-bot'}`;
-  p.textContent = text;
+  p.textContent = text.replace(/\*\*(.+?)\*\*/g, '$1');
   log.appendChild(p);
   log.scrollTop = log.scrollHeight;
   return p;
