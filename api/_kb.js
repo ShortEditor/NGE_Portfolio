@@ -31,7 +31,7 @@ export const KB = [
   {
     id: 'projects-overview',
     keywords: ['projects', 'portfolio', 'everything', 'all', 'overview', 'list', 'built', 'made', 'work'],
-    text: 'Ganesh has built 17 featured projects: Palzy (college social platform), Smart Attendance (170+ daily student users), Drift (music discovery), APIT (open-source agent policy tests), TinyLLM (offline Android LLM), GRIB (knowledge assistant), IP-SAKTI Sahayak (AYUSH IP guide), Chapp (encrypted chat), RelayClip Lite (clipboard relay), Neural Network Playground, Cloud Notes API, Exam Hall Watch (3D game), Neon Coast (Three.js game), GaneshOS (Linux desktop), Mana Katha (Telugu kirana ledger), Swara Keyboard and AI Resume Builder. Ask about any one of them by name for details.'
+    text: 'Ganesh has built 17 featured projects: Palzy (college social platform), Smart Attendance (170+ daily student users), Drift (music discovery), APIT (open-source agent policy tests), TinyLLM (offline Android LLM), GRIB (knowledge assistant), IP-SAKTI Sahayak (AYUSH IP guide), Chapp (encrypted chat), RelayClip Lite (clipboard relay), Neural Network Playground, Cloud Notes API, Exam Hall Watch (3D game), Neon Coast (Three.js game), GaneshOS (Linux desktop), Mana Katha (Telugu kirana ledger app), Swara Keyboard (Tenglish typing keyboard, not music), AI Resume Builder (resume web app). Ask about any one of them by name for details.'
   },
   {
     id: 'palzy',
