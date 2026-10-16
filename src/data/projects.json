@@ -1,9 +1,299 @@
 [
-  {"id":"palzy","name":"Palzy","category":"software","label":"Flagship / Social platform","headline":"A campus.\nA conversation.","description":"A college-exclusive social app for GPT Dharmavaram students.","tech":["React 19","React Router 7","Vite 8","Firebase Auth + Firestore","Cloudinary","Workbox PWA"],"details":"A custom client-side feed ranks posts using recency decay and class/branch proximity. A playful visual identity brings blob avatars and sticker-style cards into everyday campus conversations.","link":"https://www.palzy.website/","linkLabel":"Visit Palzy","feature":true},
-  {"id":"neon-coast","name":"Neon Coast","subtitle":"After the Flood","category":"worlds","label":"Browser game / Open world","headline":"An entire world.\nInside a tab.","description":"A first-person open-world browser game inspired by Vice City.","tech":["Three.js r169","Custom GLSL","Web Audio API"],"details":"Drivable vehicles with damage, pedestrian and police AI, missions, an in-game phone, minimap, save/load and mobile touch controls. A procedural sky, day-night cycle and dynamic weather with wet-road effects shape the atmosphere; Web Audio generates procedural sound.","link":"https://neon-coast-nu.vercel.app","linkLabel":"Enter Neon Coast","feature":true},
-  {"id":"attendance","name":"Smart Attendance","subtitle":"GPT Dharmavaram","category":"software","label":"Production / College infrastructure","description":"One college. Three role-based portals. Used daily by 170+ students.","tech":["Vanilla JavaScript","Firebase"],"details":"Students see attendance, marks and timetables. Faculty mark attendance and manage logbooks, assignments and notifications. The admin dashboard tracks 173 students, 10 faculty and 31 subjects, with promotions and reports. Actively used at Government Polytechnic Dharmavaram.","link":"https://github.com/ShortEditor/gpt-attendance-ui","linkLabel":"View the source"},
-  {"id":"chapp","name":"Chapp","category":"software","label":"Messaging / End-to-end encryption","description":"An encrypted messaging app built across realtime communication and key exchange.","tech":["Socket.IO","WebRTC","ECDH + AES-GCM","Upstash Redis","Supabase","Cloudinary"],"details":"Connects realtime messaging with ECDH key exchange and AES-GCM encryption. Built with Socket.IO, WebRTC, Upstash Redis, Supabase and Cloudinary.","link":"https://github.com/ShortEditor/Chapp","linkLabel":"View the source"},
-  {"id":"grib","name":"GRIB","category":"ai","label":"Local-first / RAG","description":"A second brain that keeps local models in the conversation.","tech":["ChromaDB","Ollama","Groq","RAG"],"details":"ChromaDB stores vector embeddings, Ollama powers local LLM chat, and Groq handles thought classification. A retrieval-augmented generation pipeline connects stored thoughts to the conversation.","link":"https://github.com/ShortEditor/grib","linkLabel":"View the source"},
-  {"id":"ip-sakti","name":"IP-SAKTI Sahayak","category":"ai","label":"Smart India Hackathon / SIH-26045","description":"Evidence-grounded AI guidance for AYUSH innovators navigating complex pathways.","tech":["Multilingual AI","Evidence-grounded retrieval","Calm Kinetic design"],"details":"Built for SIH-26045: decision support across intellectual property, traditional knowledge, biodiversity/ABS and regulatory pathways. Its Calm Kinetic visual system pairs deep forest green with warm amber.","link":"https://github.com/ShortEditor/ip-shakthi","linkLabel":"View the source"},
-  {"id":"apit","name":"APIT","subtitle":"Agent Policy Interop Tests","category":"ai","label":"Open source / Apache-2.0","description":"Make agent policy testable. Make the outcome repeatable.","tech":["AI agents","Policy","Conformance","Deterministic tests","CI"],"details":"An open-source deterministic conformance test suite for AI-agent tool governance: allow, deny, transform, approval and replay semantics. Licensed under Apache-2.0, with a CI workflow.","link":"https://github.com/ShortEditor/apit","linkLabel":"Read the source"}
+ {
+  "id": "palzy",
+  "name": "Palzy",
+  "category": "software",
+  "label": "Flagship / Social platform",
+  "headline": "A campus.\nA conversation.",
+  "description": "A college-exclusive social app for GPT Dharmavaram students.",
+  "tech": [
+   "React 19",
+   "React Router 7",
+   "Vite 8",
+   "Firebase Auth + Firestore",
+   "Cloudinary",
+   "Workbox PWA"
+  ],
+  "details": "A custom client-side feed ranks posts using recency decay and class/branch proximity. A playful visual identity brings blob avatars and sticker-style cards into everyday campus conversations.",
+  "link": "https://www.palzy.website/",
+  "linkLabel": "Visit Palzy",
+  "feature": true
+ },
+ {
+  "id": "neon-coast",
+  "name": "Neon Coast",
+  "subtitle": "After the Flood",
+  "category": "worlds",
+  "label": "Browser game / Open world",
+  "headline": "An entire world.\nInside a tab.",
+  "description": "A first-person open-world browser game inspired by Vice City.",
+  "tech": [
+   "Three.js r169",
+   "Custom GLSL",
+   "Web Audio API"
+  ],
+  "details": "Drivable vehicles with damage, pedestrian and police AI, missions, an in-game phone, minimap, save/load and mobile touch controls. A procedural sky, day-night cycle and dynamic weather with wet-road effects shape the atmosphere; Web Audio generates procedural sound.",
+  "link": "https://neon-coast-nu.vercel.app",
+  "linkLabel": "Enter Neon Coast",
+  "feature": true
+ },
+ {
+  "id": "attendance",
+  "name": "Smart Attendance",
+  "subtitle": "GPT Dharmavaram",
+  "category": "software",
+  "label": "Production / College infrastructure",
+  "description": "One college. Three role-based portals. Used daily by 170+ students.",
+  "tech": [
+   "Vanilla JavaScript",
+   "Firebase"
+  ],
+  "details": "Students see attendance, marks and timetables. Faculty mark attendance and manage logbooks, assignments and notifications. The admin dashboard tracks 173 students, 10 faculty and 31 subjects, with promotions and reports. Actively used at Government Polytechnic Dharmavaram.",
+  "link": "https://github.com/ShortEditor/gpt-attendance-ui",
+  "linkLabel": "View the source"
+ },
+ {
+  "id": "chapp",
+  "name": "Chapp",
+  "category": "software",
+  "label": "Messaging / End-to-end encryption",
+  "description": "An encrypted messaging app built across realtime communication and key exchange.",
+  "tech": [
+   "Socket.IO",
+   "WebRTC",
+   "ECDH + AES-GCM",
+   "Upstash Redis",
+   "Supabase",
+   "Cloudinary"
+  ],
+  "details": "Connects realtime messaging with ECDH key exchange and AES-GCM encryption. Built with Socket.IO, WebRTC, Upstash Redis, Supabase and Cloudinary.",
+  "link": "https://github.com/ShortEditor/Chapp",
+  "linkLabel": "View the source"
+ },
+ {
+  "id": "grib",
+  "name": "GRIB",
+  "category": "ai",
+  "label": "Local-first / RAG",
+  "description": "A second brain that keeps local models in the conversation.",
+  "tech": [
+   "ChromaDB",
+   "Ollama",
+   "Groq",
+   "RAG"
+  ],
+  "details": "ChromaDB stores vector embeddings, Ollama powers local LLM chat, and Groq handles thought classification. A retrieval-augmented generation pipeline connects stored thoughts to the conversation.",
+  "link": "https://github.com/ShortEditor/grib",
+  "linkLabel": "View the source"
+ },
+ {
+  "id": "ip-sakti",
+  "name": "IP-SAKTI Sahayak",
+  "category": "ai",
+  "label": "Smart India Hackathon / SIH-26045",
+  "description": "Evidence-grounded AI guidance for AYUSH innovators navigating complex pathways.",
+  "tech": [
+   "Multilingual AI",
+   "Evidence-grounded retrieval",
+   "Calm Kinetic design"
+  ],
+  "details": "Built for SIH-26045: decision support across intellectual property, traditional knowledge, biodiversity/ABS and regulatory pathways. Its Calm Kinetic visual system pairs deep forest green with warm amber.",
+  "link": "https://github.com/ShortEditor/ip-shakthi",
+  "linkLabel": "View the source"
+ },
+ {
+  "id": "apit",
+  "name": "APIT",
+  "subtitle": "Agent Policy Interop Tests",
+  "category": "ai",
+  "label": "Open source / Apache-2.0",
+  "description": "Make agent policy testable. Make the outcome repeatable.",
+  "tech": [
+   "AI agents",
+   "Policy",
+   "Conformance",
+   "Deterministic tests",
+   "CI"
+  ],
+  "details": "An open-source deterministic conformance test suite for AI-agent tool governance: allow, deny, transform, approval and replay semantics. Licensed under Apache-2.0, with a CI workflow.",
+  "link": "https://github.com/ShortEditor/apit",
+  "linkLabel": "Read the source"
+ },
+ {
+  "id": "drift",
+  "name": "Drift",
+  "subtitle": "Music discovery",
+  "category": "software",
+  "label": "Music discovery / Live",
+  "description": "A reels-style music discovery app. Scroll real tracks, hear 30-second previews, save what moves you.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Vite",
+   "Jamendo API",
+   "Firebase",
+   "PWA + Android APK"
+  ],
+  "details": "Jamendo's indie and Creative Commons catalog powers discovery, with artist follows, refresh rotation and an After Dark player. Ships on the web and as an Android APK with its own download page. Live in private beta.",
+  "link": "https://drift-music-scroll.vercel.app/",
+  "linkLabel": "Open Drift"
+ },
+ {
+  "id": "smartbell",
+  "name": "SmartBell",
+  "subtitle": "GPT Dharmavaram",
+  "category": "software",
+  "label": "Hardware + web / In use at college",
+  "description": "An ESP32 college bell, scheduled and controlled from a live web dashboard.",
+  "tech": [
+   "ESP32",
+   "Firebase",
+   "Web dashboard",
+   "Realtime sync"
+  ],
+  "details": "Period editor, holiday calendar and live bell status, built for Government Polytechnic Dharmavaram. Documented in a full project review deck.",
+  "link": "https://smart-bell-b2fc0.web.app/",
+  "linkLabel": "Open the dashboard"
+ },
+ {
+  "id": "mana-katha",
+  "name": "Mana Katha",
+  "subtitle": "For the family kirana shop",
+  "category": "software",
+  "label": "Android prototype / Offline-first",
+  "description": "A Telugu + English credit-ledger app for a kirana shop. Speak an entry, the app writes it and answers back.",
+  "tech": [
+   "Android",
+   "Voice entry",
+   "Telugu + English",
+   "Offline storage",
+   "Backup & restore"
+  ],
+  "details": "Customers with phone numbers, credit and received entries, confirm-before-save voice cards, spoken Telugu replies, undo and backup/restore. An offline intent model for free-form voice commands is in training."
+ },
+ {
+  "id": "ganeshos",
+  "name": "GaneshOS",
+  "subtitle": "With Ganesh Studio",
+  "category": "software",
+  "label": "Desktop OS / In development",
+  "description": "A personal desktop operating system: Debian underneath, a Mac-style desktop with custom window controls on top.",
+  "tech": [
+   "Debian Linux",
+   "Custom shell",
+   "Ganesh Studio editor",
+   "GitHub Actions ISO builds"
+  ],
+  "details": "One-pill window controls with Shelve, Focus and Dismiss, edge snapping and a shelf for minimized windows. Ships with a built-in editor, Ganesh Studio, and is optimized to stay smooth on low-end hardware."
+ },
+ {
+  "id": "exam-hall-watch",
+  "name": "Exam Hall Watch",
+  "category": "worlds",
+  "label": "Browser game / Three.js",
+  "description": "A 3D spot-the-anomaly game set in a dim exam hall. Find what changed, or call ALL CLEAR.",
+  "tech": [
+   "Three.js",
+   "Canvas textures",
+   "Touch + gyro look",
+   "End-to-end tested"
+  ],
+  "details": "25 anomaly types across 3 difficulty tiers with a shrinking timer. Every asset is drawn in code: no external art, no tracking, no backend. About 90 draw calls per frame.",
+  "link": "https://exam-hall-watch-v2.vercel.app/",
+  "linkLabel": "Play Exam Hall Watch"
+ },
+ {
+  "id": "nn-playground",
+  "name": "Neural Network Playground",
+  "category": "ai",
+  "label": "Interactive / Runs fully in the browser",
+  "description": "Build a neural network, press Train and watch it learn: decision boundary, weights and loss, live.",
+  "tech": [
+   "Vanilla JavaScript",
+   "Backpropagation",
+   "Canvas visualization",
+   "No frameworks"
+  ],
+  "details": "Up to 4 hidden layers, input features like X1² and sin(X1), Tanh/ReLU/Sigmoid activations, L1/L2 regularization and five datasets including XOR and Spiral. A real multilayer perceptron written from scratch.",
+  "link": "https://neural-network-playground.vercel.app/",
+  "linkLabel": "Train a network"
+ },
+ {
+  "id": "resume-builder",
+  "name": "AI Resume Builder",
+  "category": "software",
+  "label": "AI web app / Live",
+  "description": "An AI resume builder that tailors to a job description, scores ATS compatibility and exports clean vector PDFs.",
+  "tech": [
+   "React",
+   "Groq API",
+   "ATS scoring",
+   "Vector PDF export"
+  ],
+  "details": "Strict anti-fabrication guards keep the AI truthful. Five professional templates, live preview, section reordering and local-first autosave with JSON backup.",
+  "link": "https://resume-builder-mocha-pi.vercel.app/",
+  "linkLabel": "Build a resume"
+ },
+ {
+  "id": "tinyllm",
+  "name": "TinyLLM",
+  "category": "ai",
+  "label": "Android / On-device AI",
+  "description": "A small LLM running fully offline on a phone. No server, no account.",
+  "tech": [
+   "Kotlin",
+   "Jetpack Compose",
+   "MediaPipe",
+   "Qwen2.5 / Gemma-3"
+  ],
+  "details": "Runs small open models (Qwen2.5 0.5B and 1.5B, optional Gemma-3-1B) entirely on-device through MediaPipe. Chat keeps working with zero connectivity."
+ },
+ {
+  "id": "swara-keyboard",
+  "name": "Swara Keyboard",
+  "subtitle": "Tenglish, understood",
+  "category": "software",
+  "label": "Android keyboard / Early prototype",
+  "description": "An AI keyboard built for Tenglish typing: Telugu words in English letters, corrected without fighting the writer.",
+  "tech": [
+   "Android",
+   "IME",
+   "Groq API",
+   "Offline suggestions"
+  ],
+  "details": "Dark keys with a saffron accent and a తె/EN toggle. Inline AI: type “write a paragraph about rose” and insert the answer straight from the keyboard, powered by the user's own Groq key."
+ },
+ {
+  "id": "relayclip",
+  "name": "RelayClip Lite",
+  "category": "software",
+  "label": "Open source / Cross-device sync",
+  "description": "Copy on one device, paste on another. Instant clipboard, image and file relay between phone, laptop and web.",
+  "tech": [
+   "WebSocket relay",
+   "PWA",
+   "Docker",
+   "QR pairing"
+  ],
+  "details": "Room-based pairing with a 6-digit code or QR scan, bi-directional text sync, image and file relay, a collaborative scratchpad and searchable history. Works over the internet or local Wi-Fi.",
+  "link": "https://github.com/ShortEditor/relayclip-lite",
+  "linkLabel": "View the source"
+ },
+ {
+  "id": "cloud-notes-api",
+  "name": "Cloud Notes API",
+  "category": "software",
+  "label": "Backend / Cloud internship",
+  "description": "A Flask notes API built task by task through a cloud computing internship, from hello-world to a hardened production container.",
+  "tech": [
+   "Python",
+   "Flask",
+   "SQLite",
+   "Docker",
+   "CI"
+  ],
+  "details": "Six self-contained milestones: REST CRUD, validation, unit and performance tests with a coverage gate, then a hardened deployment with API keys and rate limiting.",
+  "link": "https://github.com/ShortEditor/cloud-notes-api",
+  "linkLabel": "View the source"
+ }
 ]
