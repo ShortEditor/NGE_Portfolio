@@ -1,3 +1,19 @@
+/* Ask AI assistant */
+.nge-ask-intro{max-width:46ch;color:var(--muted);margin:18px 0 34px}
+.nge-chat{border:1px solid var(--hairline);background:var(--coal);color:var(--paper);max-width:760px}
+.nge-chat-log{padding:26px;display:flex;flex-direction:column;gap:14px;max-height:380px;overflow-y:auto}
+.nge-chat-msg{margin:0;max-width:80%;line-height:1.55;font-size:15px;white-space:pre-wrap}
+.nge-chat-bot{align-self:flex-start;color:var(--paper)}
+.nge-chat-you{align-self:flex-end;text-align:right;color:var(--warm)}
+.nge-chat-thinking{opacity:.55}
+.nge-chat-form{display:flex;border-top:1px solid #495155}
+.nge-chat-form input{flex:1;background:transparent;border:0;color:var(--paper);font:inherit;font-size:15px;padding:18px 26px;outline:none}
+.nge-chat-form input::placeholder{color:#8b9497}
+.nge-chat-send{background:transparent;border:0;border-left:1px solid #495155;color:var(--warm);font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:0 26px;cursor:pointer;transition:background .25s}
+.nge-chat-send:hover,.nge-chat-send:focus-visible{background:rgba(239,186,130,.08)}
+.nge-chat-send:disabled{opacity:.4;cursor:default}
+@media(max-width:700px){.nge-chat-msg{max-width:100%}.nge-chat-form input{padding:16px 18px}}
+
 /* ===== About / Work / Contact — isolated from the approved hero ===== */
 .nge-below{--paper:#e8e8e2;--coal:#1c2428;--muted:#5c6568;--hairline:#acb0aa;--warm:#efba82;background:var(--paper);color:var(--coal);position:relative}
 .nge-below [hidden]{display:none!important}.nge-below h2,.nge-below h3,.nge-below p{margin-top:0}.nge-below p{line-height:1.65}.nge-below button,.nge-below summary,.nge-below a{touch-action:manipulation}.nge-below a:focus-visible,.nge-below button:focus-visible,.nge-below summary:focus-visible{outline:2px solid currentColor;outline-offset:5px}.nge-below summary{cursor:pointer;list-style:none}.nge-below summary::-webkit-details-marker{display:none}.nge-below summary::marker{content:''}.nge-below a,.nge-below summary{scroll-margin-top:100px}.nge-section{padding:45px 5.5vw 100px;scroll-margin-top:64px}.nge-nav{position:sticky;top:0;z-index:12;display:flex;gap:35px;align-items:center;min-height:76px;padding:12px 5.5vw;background:var(--paper);border-bottom:1px solid var(--hairline)}.nge-nav-brand{font-size:32px;font-weight:700;letter-spacing:-3px}.nge-nav-links{display:flex;align-items:center;gap:clamp(16px,2.5vw,40px);margin-left:auto}.nge-nav-links a{font-size:12px;padding:12px 0;border-bottom:1px solid transparent;white-space:nowrap}.nge-nav-links a:hover,.nge-nav-links a[aria-current]{border-color:currentColor}.nge-nav-soon{display:flex;align-items:center;gap:10px;font-size:11px;color:#60686b;border-left:1px solid var(--hairline);padding-left:25px;white-space:nowrap}.nge-nav-soon small{font-size:8px;border:1px solid var(--hairline);padding:4px}
@@ -139,18 +155,3 @@
 .is-reduced .nge-filters button:active{transform:none}
 .is-reduced .nge-socials>a:hover span:last-child,.is-reduced .nge-socials>a:focus-visible span:last-child,.is-reduced .nge-socials>a:active span:last-child,.is-reduced .nge-footer a:hover,.is-reduced .nge-footer a:focus-visible,.is-reduced .nge-footer a:active{transform:none}
 @media(prefers-reduced-motion:reduce){.nge-education[open] dd{animation:none}.nge-catalog-group:nth-child(2) li::after{animation:none}}
-/* Ask AI assistant */
-.nge-ask-intro{max-width:46ch;color:var(--muted);margin:18px 0 34px}
-.nge-chat{border:1px solid var(--hairline);background:var(--coal);color:var(--paper);max-width:760px}
-.nge-chat-log{padding:26px;display:flex;flex-direction:column;gap:14px;max-height:380px;overflow-y:auto}
-.nge-chat-msg{margin:0;max-width:80%;line-height:1.55;font-size:15px;white-space:pre-wrap}
-.nge-chat-bot{align-self:flex-start;color:var(--paper)}
-.nge-chat-you{align-self:flex-end;text-align:right;color:var(--warm)}
-.nge-chat-thinking{opacity:.55}
-.nge-chat-form{display:flex;border-top:1px solid #495155}
-.nge-chat-form input{flex:1;background:transparent;border:0;color:var(--paper);font:inherit;font-size:15px;padding:18px 26px;outline:none}
-.nge-chat-form input::placeholder{color:#8b9497}
-.nge-chat-send{background:transparent;border:0;border-left:1px solid #495155;color:var(--warm);font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:0 26px;cursor:pointer;transition:background .25s}
-.nge-chat-send:hover,.nge-chat-send:focus-visible{background:rgba(239,186,130,.08)}
-.nge-chat-send:disabled{opacity:.4;cursor:default}
-@media(max-width:700px){.nge-chat-msg{max-width:100%}.nge-chat-form input{padding:16px 18px}}
