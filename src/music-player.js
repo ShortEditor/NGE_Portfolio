@@ -3,6 +3,7 @@
 // tap/click on a track row. One shared Audio = one track at a time.
 const TRACKS = {
   'Sudarshan Dhari': 'music/sudarshan-dhari.mp3',
+  'Venkateshwara Raaga': 'music/venkateshwara-raaga.mp3',
   'Detective Arjun theme': 'music/detective-arjun-theme.mp3',
   'Shantakaram': 'music/shantakaram.mp3',
   'Alien Hand title card': 'music/alien-hand-title-card.mp3',
