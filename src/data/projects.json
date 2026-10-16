@@ -143,7 +143,7 @@
   "name": "SmartBell",
   "subtitle": "GPT Dharmavaram",
   "category": "software",
-  "label": "Hardware + web / Running at his college",
+  "label": "Hardware + web / In use at college",
   "description": "An ESP32 college bell, scheduled and controlled from a live web dashboard.",
   "tech": [
    "ESP32",
@@ -158,7 +158,7 @@
  {
   "id": "mana-katha",
   "name": "Mana Katha",
-  "subtitle": "For his parents' kirana shop",
+  "subtitle": "For the family kirana shop",
   "category": "software",
   "label": "Android prototype / Offline-first",
   "description": "A Telugu + English credit-ledger app for a kirana shop. Speak an entry, the app writes it and answers back.",
@@ -177,7 +177,7 @@
   "subtitle": "With Ganesh Studio",
   "category": "software",
   "label": "Desktop OS / In development",
-  "description": "His own desktop operating system: Debian underneath, a Mac-style desktop with custom window controls on top.",
+  "description": "A personal desktop operating system: Debian underneath, a Mac-style desktop with custom window controls on top.",
   "tech": [
    "Debian Linux",
    "Custom shell",
@@ -239,7 +239,7 @@
   "name": "TinyLLM",
   "category": "ai",
   "label": "Android / On-device AI",
-  "description": "A small LLM running fully offline on his phone. No server, no account.",
+  "description": "A small LLM running fully offline on a phone. No server, no account.",
   "tech": [
    "Kotlin",
    "Jetpack Compose",
@@ -254,14 +254,14 @@
   "subtitle": "Tenglish, understood",
   "category": "software",
   "label": "Android keyboard / Early prototype",
-  "description": "His own AI keyboard for Tenglish typing: Telugu words in English letters, corrected without fighting the writer.",
+  "description": "An AI keyboard built for Tenglish typing: Telugu words in English letters, corrected without fighting the writer.",
   "tech": [
    "Android",
    "IME",
    "Groq API",
    "Offline suggestions"
   ],
-  "details": "Dark keys with a saffron accent and a తె/EN toggle. Inline AI: type “write a paragraph about rose” and insert the answer straight from the keyboard, powered by his own Groq key."
+  "details": "Dark keys with a saffron accent and a తె/EN toggle. Inline AI: type “write a paragraph about rose” and insert the answer straight from the keyboard, powered by the user's own Groq key."
  },
  {
   "id": "relayclip",
